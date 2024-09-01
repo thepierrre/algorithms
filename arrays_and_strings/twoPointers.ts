@@ -150,5 +150,44 @@ console.log(reverseString(["h", "e", "l", "l", "o"]));
 let nums = [-4, -1, 0, 3, 10];
 
 const returnSquaresNonDecreasing = (arr: number[]): number[] => {
-  let output: number = [];
+  let output: number[] = [];
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    if (Math.abs(arr[left]) < Math.abs(arr[right])) {
+      output.push(arr[right] ** 2);
+      right--;
+    } else {
+      output.push(arr[left] ** 2);
+      left++;
+    }
+  }
+
+  return output.reverse();
 };
+
+console.log(returnSquaresNonDecreasing(nums));
+
+// Provided you cannot use arr.reverse()
+const returnSquaresNonDecreasing2 = (arr: number[]): number[] => {
+  let output: number[] = new Array(arr.length);
+  let left = 0;
+  let right = arr.length - 1;
+  let k = arr.length - 1;
+
+  while (left <= right) {
+    if (Math.abs(arr[left]) < Math.abs(arr[right])) {
+      output[k] = arr[right] ** 2;
+      right--;
+    } else {
+      output[k] = arr[left] ** 2;
+      left++;
+    }
+    k--;
+  }
+
+  return output;
+};
+
+console.log(returnSquaresNonDecreasing2(nums));
