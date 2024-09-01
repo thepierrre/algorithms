@@ -5,7 +5,7 @@ const word4 = "aeroplane";
 const word5 = "butterfly";
 const word6 = "pistachio";
 
-const checkIfPalindrome = (word: string): boolean => {
+const checkIfPalindrome = (word) => {
   let left = 0;
   let right = word.length - 1;
 
@@ -34,7 +34,7 @@ const target2 = 23;
 const nums3 = [2, 4, 6, 8, 10, 12];
 const target3 = 19;
 
-const checkIfPairsEqualsTarget = (nums: number[], target: number): boolean => {
+const checkIfPairsEqualsTarget = (nums, target) => {
   let left = 0;
   let right = nums.length - 1;
 
@@ -68,10 +68,10 @@ const arr3 = [1, 2, 8];
 const arr4 = [3, 4, 6, 10];
 
 // time complexity = O(n)
-const combineArrays = (arr1: number[], arr2: number[]): number[] => {
+const combineArrays = (arr1, arr2) => {
   let i = 0,
     j = 0;
-  let output: number[] = [];
+  let output = [];
 
   while (i < arr1.length && j < arr2.length) {
     if (arr1[i] < arr2[j]) {
@@ -107,7 +107,7 @@ const string1 = "ace";
 const string2 = "aec";
 const string3 = "abcde";
 
-const checkIfSubsequence = (s: string, t: string): boolean => {
+const checkIfSubsequence = (s, t) => {
   let output = "";
   let i = 0,
     j = 0;
@@ -127,7 +127,7 @@ console.log(checkIfSubsequence(string1, string3));
 
 // Reverse a string
 
-const reverseString = (s: string[]): string[] => {
+const reverseString = (s) => {
   let left = 0;
   let right = s.length - 1;
 
@@ -147,10 +147,10 @@ console.log(reverseString(["h", "e", "l", "l", "o"]));
 // Input: nums = [-4,-1,0,3,10]
 // Output: [0,1,9,16,100]
 
-let nums = [-4, -1, 0, 3, 10];
+const numbers = [-4, -1, 0, 3, 10];
 
-const returnSquaresNonDecreasing = (arr: number[]): number[] => {
-  let output: number[] = [];
+const returnSquaresNonDecreasing = (arr) => {
+  let output = [];
   let left = 0;
   let right = arr.length - 1;
 
@@ -167,11 +167,11 @@ const returnSquaresNonDecreasing = (arr: number[]): number[] => {
   return output.reverse();
 };
 
-console.log(returnSquaresNonDecreasing(nums));
+console.log(returnSquaresNonDecreasing(numbers));
 
 // Provided you cannot use arr.reverse()
-const returnSquaresNonDecreasing2 = (arr: number[]): number[] => {
-  let output: number[] = new Array(arr.length);
+const returnSquaresNonDecreasing2 = (arr) => {
+  let output = new Array(arr.length);
   let left = 0;
   let right = arr.length - 1;
   let k = arr.length - 1;
