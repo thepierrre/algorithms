@@ -46,3 +46,25 @@ const numberOfWaysToSplitArray = (nums) => {
 }
 
 console.log(numberOfWaysToSplitArray([10, 4, -8, 7]));
+
+// Rewrite the function above using an integer instead of an array.
+
+const numberOfWaysToSplitArrayWithInteger = (nums) => {
+    let answer = 0;
+    let total = 0;
+    let leftSection = 0;
+    for (const num of nums) {
+        total += num;
+    }
+
+    for (let i = 0; i < nums.length - 1; i++) {
+        leftSection += nums[i];
+        if (leftSection >= total - leftSection) {
+            answer++;
+        }
+    }
+
+    return answer;
+}
+
+console.log(numberOfWaysToSplitArrayWithInteger([10, 4, -8, 7]));
