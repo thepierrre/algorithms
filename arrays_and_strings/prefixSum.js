@@ -68,3 +68,44 @@ const numberOfWaysToSplitArrayWithInteger = (nums) => {
 }
 
 console.log(numberOfWaysToSplitArrayWithInteger([10, 4, -8, 7]));
+
+// Given an array nums, 
+// we define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
+// Return the running sum of nums.
+
+const runningSumOfArray = (nums) => {
+    let prefix = [nums[0]];
+
+    for (let i = 1; i < nums.length; i++) {
+        prefix.push(nums[i] + prefix[prefix.length - 1]);
+    }
+
+    return prefix;
+}
+
+console.log(runningSumOfArray([3,1,2,10,1]))
+
+// Given an array of integers nums, you start with an initial positive value startValue.
+// In each iteration, you calculate the step by step sum of startValue plus elements in nums (from left to right).
+// Return the minimum positive value of startValue such that the step by step sum is never less than 1.
+
+const minStartValue = (nums) => {    
+    let prefix = [nums[0]];
+    let minStartValue = 1;
+    let currStartValue = 0;
+
+    for (let i = 1; i < nums.length; i++) {
+        let currentValue = nums[i] + prefix[prefix.length - 1];
+        prefix.push(currentValue);
+
+        if (currentValue < 1) {
+            currStartValue = Math.abs(1 - currentValue)
+        }
+
+        minStartValue = Math.max(minStartValue, currStartValue)
+    }
+
+    return minStartValue;
+}
+
+console.log(minStartValue([-3,2,-3,4,2]))
