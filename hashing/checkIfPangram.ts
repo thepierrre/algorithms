@@ -2,8 +2,8 @@
 // return true if sentence is a pangram, or false otherwise.
 // A pangram is a sentence where every letter of the English alphabet appears at least once.
 
-const input1 = "thequickbrownfoxjumpsoverthelazydog" // true
-const input2 = "piotr" // false
+let input1 = "thequickbrownfoxjumpsoverthelazydog" // true
+let input2 = "piotr" // false
 
 const checkIfPangram = (sentence: string): boolean => {
     let mySet: Set<string> = new Set();

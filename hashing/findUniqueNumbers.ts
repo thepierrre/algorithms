@@ -2,8 +2,8 @@
 // find all the unique numbers x in nums that satisfy the following:
 // x + 1 is not in nums, and x - 1 is not in nums.
 
-const nums1 = [1, 1, 2, 4, 4, 6, 8, 10]; // output [4, 6, 8, 10]
-const nums2 = [3, 3, 2, 2, 1, 5, 7]; // output [5, 7]
+let nums1 = [1, 1, 2, 4, 4, 6, 8, 10]; // output [4, 6, 8, 10]
+let nums2 = [3, 3, 2, 2, 1, 5, 7]; // output [5, 7]
 
 
 // O(1) thanks to converting the array into a set.
